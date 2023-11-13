@@ -2,7 +2,8 @@
 	<SelectDialog
 		id="selectDialog"
 		title="Customers"
-		items="{service>/BusinessPartnerCollection}"
+	    items="{ path: 'service>/BusinessPartnerCollection',sorter: { path: 'Name',
+					descending: false }}"
 		search=".onValueHelpSearch"
 		confirm=".onValueHelpClose"
 		cancel=".onValueHelpClose">

@@ -33,7 +33,7 @@ sap.ui.define([
 		},		
 		onValueHelpSearch: function (oEvent) {
 			var sValue = oEvent.getParameter("value");
-			var oFilter = new Filter("Name", FilterOperator.Contains, sValue);
+			var oFilter = new Filter("Name", FilterOperator.StartsWith, sValue);
 
 			oEvent.getSource().getBinding("items").filter([oFilter]);
 		},

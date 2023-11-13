@@ -10,25 +10,24 @@
                     <l:VerticalLayout width="100%">
                         <Label text="Container ID">
                         </Label>
-                        <Input value="" id="name">
+                        <Input value="" id="name" showClearIcon="true">
                             <layoutData>
                                 <l:GridData id="gd21" span="XL2 L2 M3 S4" />
                             </layoutData>
                         </Input>
+
                     </l:VerticalLayout>
                     <l:VerticalLayout width="100%">
                         <Label text="Customer" labelFor="customerSelect" />
-                        <Input id="customerSelect" placeholder="Select Customer" showSuggestion="true" showValueHelp="true" valueHelpRequest=".onValueHelpRequest" suggestionItems="{ path: 'service>/BusinessPartnerCollection',sorter: { path: 'Name',group: true,
-					descending: false }}">
-                            <suggestionItems>
-                                <core:ListItem key="{service>/ObjectID}" text="{service>/Name}" additionalText="{service>/BusinessPartnerUUID}" />
-                            </suggestionItems>
-                        </Input>
+                        <Input id="customerSelect" 
+                        placeholder="Select Customer" 
+                        showValueHelp="true" 
+                        valueHelpRequest=".onValueHelpRequest"/>
                     </l:VerticalLayout>
                     <l:VerticalLayout width="100%">
                         <Label text="RMA Number" required="true">
                         </Label>
-                        <Input value="" id="rma">
+                        <Input value="" id="rma" showClearIcon="true">
                             <layoutData>
                                 <l:GridData span="XL2 L2 M3 S4" />
                             </layoutData>
@@ -37,7 +36,7 @@
                     <l:VerticalLayout width="100%">
                         <Label text="Basket" required="true">
                         </Label>
-                        <Input value="" id="basket">
+                        <Input value="" id="basket" showClearIcon="true">
                             <layoutData>
                                 <l:GridData span="XL2 L2 M3 S4" />
                             </layoutData>
@@ -87,7 +86,7 @@
                     <l:VerticalLayout width="100%">
                         <Label text="Container ID">
                         </Label>
-                        <Input value="">
+                        <Input value="" showClearIcon="true">
                             <layoutData>
                                 <l:GridData span="XL2 L2 M3 S4" />
                             </layoutData>
