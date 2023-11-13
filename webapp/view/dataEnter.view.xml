@@ -1,0 +1,103 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:core="sap.ui.core" controllerName="arvato.cx.scandialog.controller.dataEnter">
+    <Page id="page" title="{i18n>title}" showNavButton="true" navButtonPress="onNavBack" showHeader="true">
+        <l:VerticalLayout width="100%" class="gridWrapper">
+            <l:Grid containerQuery="true" defaultSpan="L6 M12 S12" width="auto">
+                <Panel id="panel1" width="100%" class="sapUiResponsiveMargin" height="300px" headerText="General">
+                    <l:VerticalLayout width="100%">
+                        <Label text="Container ID">
+                        </Label>
+                        <Input value="" id="name">
+                            <layoutData>
+                                <l:GridData id="gd21" span="XL2 L2 M3 S4" />
+                            </layoutData>
+                        </Input>
+                    </l:VerticalLayout>
+                    <l:VerticalLayout width="100%">
+                        <Label text="Customer" labelFor="customerSelect" />
+                        <Input id="customerSelect" placeholder="Select Customer" showSuggestion="true" showValueHelp="true" valueHelpRequest=".onValueHelpRequest" suggestionItems="{ path: 'service>/BusinessPartnerCollection',sorter: { path: 'Name',group: true,
+					descending: false }}">
+                            <suggestionItems>
+                                <core:ListItem key="{service>/ObjectID}" text="{service>/Name}" additionalText="{service>/BusinessPartnerUUID}" />
+                            </suggestionItems>
+                        </Input>
+                    </l:VerticalLayout>
+                    <l:VerticalLayout width="100%">
+                        <Label text="RMA Number" required="true">
+                        </Label>
+                        <Input value="" id="rma">
+                            <layoutData>
+                                <l:GridData span="XL2 L2 M3 S4" />
+                            </layoutData>
+                        </Input>
+                    </l:VerticalLayout>
+                    <l:VerticalLayout width="100%">
+                        <Label text="Basket" required="true">
+                        </Label>
+                        <Input value="" id="basket">
+                            <layoutData>
+                                <l:GridData span="XL2 L2 M3 S4" />
+                            </layoutData>
+                        </Input>
+                    </l:VerticalLayout>
+                </Panel>
+                <Panel width="100%" class="sapUiResponsiveMargin" height="300px" headerText="Stored Data">
+                    <l:Grid containerQuery="true" defaultSpan="L6 M12 S12" width="100%">
+                        <l:HorizontalLayout >
+                            <l:VerticalLayout width="150px">
+                                <Label text="Customer name">
+                                </Label>
+                                <Text text="Text1"></Text>
+                            </l:VerticalLayout>
+                        </l:HorizontalLayout>
+                        <l:HorizontalLayout >
+                            <l:VerticalLayout width="150px">
+                                <Label text="RMA Ticket ID">
+                                </Label>
+                                <Text text="Text1"></Text>
+                            </l:VerticalLayout>
+                            <l:VerticalLayout width="150px">
+                                <Label text="RMA Ticket Item">
+                                </Label>
+                                <Text text="Text1"></Text>
+                            </l:VerticalLayout>
+                            <l:VerticalLayout width="150px">
+                                <Label text="exampleDiv">
+                                </Label>
+                                <Text text="Text1"></Text>
+                            </l:VerticalLayout>
+                            <l:VerticalLayout width="150px">
+                                <Label text="Planned Quantity">
+                                </Label>
+                                <Text text="Text1"></Text>
+                            </l:VerticalLayout>
+                            <l:VerticalLayout width="150px">
+                                <Label text="Actual Quantity">
+                                </Label>
+                                <Text text="Text1"></Text>
+                            </l:VerticalLayout>
+                        </l:HorizontalLayout>
+                    </l:Grid>
+                </Panel>
+
+                <Panel width="100%" class="sapUiResponsiveMargin" height="300px" headerText="General">
+                    <l:VerticalLayout width="100%">
+                        <Label text="Container ID">
+                        </Label>
+                        <Input value="">
+                            <layoutData>
+                                <l:GridData span="XL2 L2 M3 S4" />
+                            </layoutData>
+                        </Input>
+                    </l:VerticalLayout>
+                </Panel>
+                <Panel width="100%" class="sapUiResponsiveMargin" height="300px" headerText="Stored Data">
+                </Panel>
+            </l:Grid>
+
+        </l:VerticalLayout>
+    </Page>
+</mvc:View>

@@ -1,0 +1,131 @@
+{
+  "_version": "1.58.0",
+  "sap.app": {
+    "id": "arvato.cx.scandialog",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "Scandialog",
+    "description": "Scandialog POC",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.11.2",
+      "toolsId": "a0315f7b-9af2-47eb-bb79-1b5328a29510"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/sap/c4c/odata/v1/c4codataapi/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.119.2",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.ui.webc.main": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "arvato.cx.scandialog.i18n.i18n"
+        }
+      },
+      "service": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "arvato.cx.scandialog.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "Routeview",
+          "pattern": ":?query:",
+          "target": [
+            "Targetview"
+          ]
+        },
+        {
+          "name": "dataEnter",
+          "pattern": "dataEnter",
+          "target": "dataEnter"
+        }
+      ],
+      "targets": {
+        "Targetview": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "view",
+          "viewName": "view"
+        },
+        "dataEnter": {
+          "viewId": "dataEnter",
+          "viewName": "dataEnter"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "arvato.cx.scandialog.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}

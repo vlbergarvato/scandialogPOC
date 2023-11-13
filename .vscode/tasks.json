@@ -1,0 +1,12 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"label": "npm: start",
+			"script": "start",
+			"problemMatcher": [],
+			"detail": "fiori run --open \"test/flpSandbox.html?sap-ui-xx-viewCache=false#arvatocxscandialog-display\""
+		}
+	]
+}
